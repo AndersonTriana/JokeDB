@@ -18,7 +18,7 @@ if (isset($_POST['joketext'])) {
         header('location: jokes.php');
     }catch (PDOException $e){
         $title = 'An error has ocurred';
-        $output = 'Database error: '.$e->getMesssage() . ' in' . $e->getFile() . ':' . $e->getLine(); 
+        $output = 'Database error: '.$e; 
     }     
 }else{
     $title = 'Add a new joke';

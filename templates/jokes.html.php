@@ -8,7 +8,11 @@
             foreach ($jokes as $joke): ?>
                 <blockquote>
                     <p>
-                        <?= htmlspecialchars($joke, ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars($joke['joketext'], ENT_QUOTES, 'UTF-8') ?>                       
+                        <form action="deleteJoke.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $joke['id'] ?>">
+                            <input type="submit" value="Delete"> 
+                        </form>
                     </p>
                 </blockquote>          
             <?php endforeach;
