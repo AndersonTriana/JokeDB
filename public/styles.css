@@ -25,14 +25,14 @@ li a:hover:not(.active) {
 }
 
 blockquote {
-    display: table; 
+    display: block; 
     margin-bottom: 1em; 
     border-bottom: 1px solid #ccc; 
     padding: 0.5em;
 }
 
 blockquote p {
-    display: table-cell;
+
     width: 90%;
     vertical-align: top;
 }

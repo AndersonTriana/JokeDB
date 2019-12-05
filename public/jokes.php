@@ -5,7 +5,8 @@ try {
         charset=utf8','dmn1','R1tyMqt8OtfdoS2Z');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = 'SELECT `id`,`joketext` FROM `jokes`'; //query
+    $sql = 'SELECT `jokes`.`id`, `joketext`, `name`, `email` 
+        FROM `jokes` INNER JOIN `author` ON `authorid` = `author`.`id`'; //query
         
     $jokes = $pdo->query($sql);//query execution and save in a variable
     
