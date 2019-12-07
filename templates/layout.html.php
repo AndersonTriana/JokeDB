@@ -22,8 +22,6 @@
     </nav>
     <?= $output ?>
 
-    <footer>
-        &copy; IJDB 2019
-    </footer>        
+    <?php include __DIR__.'/footer.html.php'; ?>      
 </body>
 </html>

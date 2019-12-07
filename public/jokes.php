@@ -1,9 +1,8 @@
 <?php
 //Database Connection
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=ijdb;
-        charset=utf8','dmn1','R1tyMqt8OtfdoS2Z');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include __DIR__.'/../includes/DatabaseConnection.php';
+    include __DIR__ . '/../includes/DatabaseFunctions.php';
     
     $sql = 'SELECT `jokes`.`id`, `joketext`, `name`, `email` 
         FROM `jokes` INNER JOIN `author` ON `authorid` = `author`.`id`'; //query
@@ -11,6 +10,8 @@ try {
     $jokes = $pdo->query($sql);//query execution and save in a variable
     
     $title = 'List of Jokes ';
+
+    $totalJokes = totalJokes($pdo);
 
     ob_start();
 
